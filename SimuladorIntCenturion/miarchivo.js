@@ -1,26 +1,17 @@
  
  //Calcular costo total de productos y/o servicios seleccionados por el usuario.
 
-let resultado = 0;
-let contador = 0;
-let repetir = true;
+function sumProduc (produc1 = 0 ,produc2 = 0){
+  console.log("Detalle de la suma de Productos");
+  console.log(`Producto 1 : $ ${produc1}`);
+  console.log(`Producto 2 : $ ${produc2}`);
+  alert(`El costo total de Productos es $ ${(produc1 + produc2)}`);
+  }
 
-while(repetir){
-      let producto = parseFloat(prompt("Ingrese el precio del producto."));
-     
-      if(isNaN(producto)){
-        console.log("Numero No valido.");
-        continue;
-      }
-
-      resultado += producto; // suma los productos ingresados,es decir resultado = resultado + producto
-      contador++; //cuenta la cantidad de productos ingresados.
-      console.log(`El costo total de Productos es $ ${resultado}`)
-      console.log(contador);
-      
-      let confirmacion = prompt("Desea seguir ingresando Productos SI/NO ?").toLowerCase();
-
-      if(confirmacion == "no" ){
-      repetir = false;
-      }
-}
+  let produc1,produc2
+  do{
+    produc1 = parseFloat(prompt("Ingrese el precio del producto."));
+    produc2 = parseFloat(prompt("Ingrese el precio de otro producto."));
+  }
+  while(isNaN(produc1) || isNaN(produc2))
+  sumProduc (produc1,produc2);
